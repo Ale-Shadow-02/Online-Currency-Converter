@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -7,9 +7,147 @@
   <title>Конвертер валют</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <div class="container">
+      <div class="header__body">
+        <div class="header__logo">
+          <img src="./images/logo.svg" class="header__logo--img" alt="logo" />
+        </div>
+        <ul class="header__menu--list menu-list">
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">БАНК</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">БИЗНЕС</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">ИНВЕСТИЦИИ</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">СТРАХОВАНИЕ</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">МОБАЙЛ</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">ПУТЕШЕСТВИЯ</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item--link">РАЗВЛЕЧЕНИЯ</a>
+          </li>
+        </ul>
+        <div class="header__login">
+          <a href="#" class="header__login--btn">Войти</a></div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="converter">
+        <h1 class="converter__title">Конвертер валют онлайн</h1>
+        <div class="converter__body">
+          <div class="converter__body--item item">
+            <span class="item__title">У меня есть</span>
+            <div class="item__switcher">
+              <div class="item__switcher--box">RUB</div>
+              <div class="item__switcher--box">USD</div>
+              <div class="item__switcher--box">EUR</div>
+              <div class="item__switcher--box">GEP</div>
+              <select class="box-select__select">
+                <option class="box-select__select--option">BYR</option>
+                <option class="box-select__select--option">AUD</option>
+                <option class="box-select__select--option">BRL</option>
+                <option class="box-select__select--option">BGN</option>
+                <option class="box-select__select--option">CZK</option>
+                <option class="box-select__select--option">CNY</option>
+                <option class="box-select__select--option">CHF</option>
+                <option class="box-select__select--option">CAD</option>
+                <option class="box-select__select--option">DKK</option>
+                <option class="box-select__select--option">HKD</option>
+                <option class="box-select__select--option">HUF</option>
+                <option class="box-select__select--option">HRK</option>
+                <option class="box-select__select--option">ISK</option>
+                <option class="box-select__select--option">IDR</option>
+                <option class="box-select__select--option">INR</option>
+                <option class="box-select__select--option">ILS</option>
+                <option class="box-select__select--option">JPY</option>
+                <option class="box-select__select--option">KRW</option>
+                <option class="box-select__select--option">MXN</option>
+                <option class="box-select__select--option">MYR</option>
+                <option class="box-select__select--option">NZD</option>
+                <option class="box-select__select--option">NOK</option>
+                <option class="box-select__select--option">PLN</option>
+                <option class="box-select__select--option">PHP</option>
+                <option class="box-select__select--option">RON</option>
+                <option class="box-select__select--option">SEK</option>
+                <option class="box-select__select--option">SGD</option>
+                <option class="box-select__select--option">THB</option>
+                <option class="box-select__select--option">TRY</option>
+                <option class="box-select__select--option">ZAR</option>
+              </select>
+            </div>
+            <div class="item__input--box">
+              <input type="text" class="item__input--input" value="5 000">
+              <span class="item__input--rate">innerHtml 1 RUB = 0.0135 USD</span>
+            </div>
+          </div>
+          <div class="converter__body--item center">
+            <img src="./images/arrow-centersvg.svg" class="center-arrow" alt="ARROW_CENTER">
+          </div>
+          <div class="converter__body--item item">
+            <span class="item__title">У меня есть</span>
+            <div class="item__switcher">
+              <div class="item__switcher--box">RUB</div>
+              <div class="item__switcher--box">USD</div>
+              <div class="item__switcher--box">EUR</div>
+              <div class="item__switcher--box">GEP</div>
+              <select class="box-select__select">
+                <option class="box-select__select--option">BYR</option>
+                <option class="box-select__select--option">AUD</option>
+                <option class="box-select__select--option">BRL</option>
+                <option class="box-select__select--option">BGN</option>
+                <option class="box-select__select--option">CZK</option>
+                <option class="box-select__select--option">CNY</option>
+                <option class="box-select__select--option">CHF</option>
+                <option class="box-select__select--option">CAD</option>
+                <option class="box-select__select--option">DKK</option>
+                <option class="box-select__select--option">HKD</option>
+                <option class="box-select__select--option">HUF</option>
+                <option class="box-select__select--option">HRK</option>
+                <option class="box-select__select--option">ISK</option>
+                <option class="box-select__select--option">IDR</option>
+                <option class="box-select__select--option">INR</option>
+                <option class="box-select__select--option">ILS</option>
+                <option class="box-select__select--option">JPY</option>
+                <option class="box-select__select--option">KRW</option>
+                <option class="box-select__select--option">MXN</option>
+                <option class="box-select__select--option">MYR</option>
+                <option class="box-select__select--option">NZD</option>
+                <option class="box-select__select--option">NOK</option>
+                <option class="box-select__select--option">PLN</option>
+                <option class="box-select__select--option">PHP</option>
+                <option class="box-select__select--option">RON</option>
+                <option class="box-select__select--option">SEK</option>
+                <option class="box-select__select--option">SGD</option>
+                <option class="box-select__select--option">THB</option>
+                <option class="box-select__select--option">TRY</option>
+                <option class="box-select__select--option">ZAR</option>
+              </select>
+            </div>
+            <div class="item__input--box">
+              <input type="text" class="item__input--input" value="5 000">
+              <span class="item__input--rate">innerHtml 1 RUB = 0.0135 USD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <script src="./js/main.js"></script>
 </body>
