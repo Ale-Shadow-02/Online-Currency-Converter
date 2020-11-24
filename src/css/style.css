@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background: #E5E5E5;
+  background: #ffffff;
 }
 
 .container {
@@ -125,6 +125,7 @@ body {
           justify-content: space-between;
   border: 1px solid #E5E5E5;
   border-radius: 3px;
+  margin: 0px 0px 20px 0px;
 }
 
 .item__switcher--box {
@@ -142,14 +143,34 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #C6C6C6;
+  padding: 10px 10px;
+  border-right: 1px solid;
+}
+
+.item__input--box {
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  padding: 10px 0px 10px 15px;
 }
 
 .item__input--input {
   display: block;
+  width: 100%;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+  margin: 0px 0px 30px 0px;
 }
 
 .item__input--rate {
   display: block;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #C6C6C6;
 }
 
 .box-select__select {
@@ -171,4 +192,11 @@ body {
 
 .center {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 75px;
 }

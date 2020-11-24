@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background: #E5E5E5;
+  background: #ffffff;
 }
 
 .container {
@@ -89,6 +89,7 @@ body {
 		}
 		&__body--item {
       width: 40%;
+      
 		}
 }
 .item {
@@ -106,6 +107,7 @@ body {
       justify-content: space-between;
       border: 1px solid #E5E5E5;
       border-radius: 3px;
+      margin: 0px 0px 20px 0px;
 		}
 		&__switcher--box {
       font-family: Roboto;
@@ -116,14 +118,31 @@ body {
       justify-content: center;
       align-items: center;
       color: #C6C6C6;
+      padding: 10px 10px;
+      border-right: 1px solid;
 		}
 		&__input--box {
+      border: 1px solid #E5E5E5;
+      border-radius: 3px;
+      padding: 10px 0px 10px 15px;
 		}
 		&__input--input {
       display: block;
+      width: 100%;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      color: #000000;
+      margin: 0px 0px 30px 0px;
 		}
 		&__input--rate {
       display: block;
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: #C6C6C6;
 		}
 }
 .box-select {
@@ -148,6 +167,9 @@ body {
 }
 .center {
   width: 20%;
+  display: flex;
+  justify-content: center;
+  padding-top: 75px;
 }
 .center-arrow {
 }
