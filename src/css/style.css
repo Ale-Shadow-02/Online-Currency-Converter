@@ -80,7 +80,7 @@ body {
 }
 
 .converter {
-  max-width: 641px;
+  max-width: 665px;
   margin: 0px auto;
   background-color: #ffffff;
 }
@@ -128,7 +128,7 @@ body {
   margin: 0px 0px 20px 0px;
 }
 
-.item__switcher--box {
+.item__switcher--box, .item__switcher--box2 {
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
@@ -143,8 +143,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #C6C6C6;
-  padding: 10px 10px;
+  padding: 10px 15px;
   border-right: 1px solid;
+  cursor: pointer;
 }
 
 .item__input--box {
@@ -188,6 +189,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #C6C6C6;
+  padding: 0px 12px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-right: none;
+  background: url(../images/arrow.svg) 36px 11px no-repeat;
 }
 
 .center {
@@ -199,4 +206,13 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 75px;
+}
+
+.center-arrow {
+  cursor: pointer;
+}
+
+.box-active {
+  background-color: #833AE0;
+  color: #ffffff;
 }
