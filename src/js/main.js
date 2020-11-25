@@ -58,24 +58,74 @@ fetch('https://api.ratesapi.io/api/latest')
     }
   });
 
-//*Получаем текстовае значения валюты по умолчанию =================
+//*Получаем значения валюты по умолчанию =================
 
+let rate1 = document.querySelector('.rate-1');
+let rate2 = document.querySelector('.rate-2');
+let input1 = document.querySelector('input.input1');
+let input2 = document.querySelector('input.input2');
 let currencyFrom = 'RUB';
 let currencyTo = 'USD';
+
+//fetch(`https://api.ratesapi.io/api/latest?base=${currencyFrom}&symbols=${currencyTo}`)
+fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
+  .then(res => res.json())
+  .then(data => {
+    rate1.innerHTML = `1 ${currencyFrom} = ${(1 / data.rates.RUB).toFixed(4)} ${currencyTo}`;
+    input2.value = `${(input1.value / data.rates.RUB).toFixed(4)}`;
+    rate2.innerHTML = `1 ${currencyTo} = ${data.rates.RUB.toFixed(4)} ${currencyFrom}`;
+    input1.addEventListener('input', function () {
+      let resultInput1 = this.value;
+      rate1.innerHTML = `1 ${currencyFrom} = ${(1 / data.rates.RUB).toFixed(4)} ${currencyTo}`;
+      input2.value = `${(resultInput1 / data.rates.RUB).toFixed(4)}`;
+      rate2.innerHTML = `1 ${currencyTo} = ${data.rates.RUB.toFixed(4)} ${currencyFrom}`;
+    });
+  });
+
+//*Получаем текстовае значения валюты по умолчанию =================
 
 let switcherBox1 = document.querySelectorAll('.switcher-box-1 ');
 switcherBox1.forEach(el => {
   el.addEventListener('click', event => {
     let target = event.target;
     currencyFrom = target.textContent || target.innerText;
-    console.log('currencyFrom: ', currencyFrom);
+    fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
+      .then(res => res.json())
+      .then(data => {
+        const {
+          base
+        } = data;
+        let currencyName = data.rates;
+        console.log('ratess: ', currencyName);
+        let currencyValue;
+        for (let key in currencyName) {
+          currencyValue = currencyName[key];
+        }
+        let resultInput1 = this.value;
+        rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
+        input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
+        rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
+        input1.addEventListener('input', function () {
+          let resultInput1 = this.value;
+          rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
+          input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
+          rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
+        });
+
+      });
   });
 });
+
 let switcherBox2 = document.querySelectorAll('.switcher-box-2 ');
 switcherBox2.forEach(el => {
   el.addEventListener('click', event => {
     let target = event.target;
     currencyTo = target.textContent || target.innerText;
-    console.log('currencyTo: ', currencyTo);
+    fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log('data: ', data);
+
+      });
   });
 });
