@@ -76,13 +76,14 @@ fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyF
     rate2.innerHTML = `1 ${currencyTo} = ${data.rates.RUB.toFixed(4)} ${currencyFrom}`;
     input1.addEventListener('input', function () {
       let resultInput1 = this.value;
-      rate1.innerHTML = `1 ${currencyFrom} = ${(1 / data.rates.RUB).toFixed(4)} ${currencyTo}`;
       input2.value = `${(resultInput1 / data.rates.RUB).toFixed(4)}`;
-      rate2.innerHTML = `1 ${currencyTo} = ${data.rates.RUB.toFixed(4)} ${currencyFrom}`;
     });
   });
 
 //*Получаем текстовае значения валюты по умолчанию =================
+//* Для левого input ================
+
+
 
 let switcherBox1 = document.querySelectorAll('.switcher-box-1 ');
 switcherBox1.forEach(el => {
@@ -96,25 +97,23 @@ switcherBox1.forEach(el => {
           base
         } = data;
         let currencyName = data.rates;
-        console.log('ratess: ', currencyName);
         let currencyValue;
         for (let key in currencyName) {
           currencyValue = currencyName[key];
         }
-        let resultInput1 = this.value;
         rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
-        input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
+        input2.value = `${(input1.value / currencyValue).toFixed(4)}`;
         rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
         input1.addEventListener('input', function () {
           let resultInput1 = this.value;
-          rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
           input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
-          rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
         });
 
       });
   });
 });
+
+//* Для правого input ================
 
 let switcherBox2 = document.querySelectorAll('.switcher-box-2 ');
 switcherBox2.forEach(el => {
@@ -129,3 +128,7 @@ switcherBox2.forEach(el => {
       });
   });
 });
+
+//! Надо обернуть в функцию пока документ не загрузится, что бы все отловить
+let options1 = document.querySelectorAll('.box-select__select--option');
+console.log('options1: ', options1);
