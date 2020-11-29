@@ -1,0 +1,218 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.header {
+  background: #F5F5F6;
+  height: 50px;
+}
+
+.header__body {
+  padding: 6px 100px 0px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__menu--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+}
+
+.header__login {
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.header__login:hover {
+  background: #833AE0;
+}
+
+.header__login--btn {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.menu-list__item--link {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.06em;
+  color: #959BA4;
+  text-transform: uppercase;
+}
+
+.menu-list__item--link:hover {
+  color: #833AE0;
+}
+
+.active {
+  color: #000000;
+}
+
+.main {
+  padding: 60px 0px 0px 0px;
+}
+
+.converter {
+  max-width: 665px;
+  margin: 0px auto;
+  background-color: #ffffff;
+}
+
+.converter__title {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+  padding: 0px 0px 35px 0px;
+}
+
+.converter__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.converter__body--item {
+  width: 40%;
+}
+
+.item__title {
+  display: block;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #9F9F9F;
+  margin: 0px 0px 10px 0px;
+}
+
+.item__switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  margin: 0px 0px 20px 0px;
+}
+
+.item__switcher--box, .item__switcher--box2 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #C6C6C6;
+  padding: 10px 15px;
+  border-right: 1px solid;
+  cursor: pointer;
+}
+
+.item__input--box {
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  padding: 10px 0px 10px 15px;
+}
+
+.item__input--input {
+  display: block;
+  width: 100%;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+  margin: 0px 0px 30px 0px;
+}
+
+.item__input--rate {
+  display: block;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #C6C6C6;
+}
+
+.box-select__select {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #C6C6C6;
+  padding: 0px 12px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-right: none;
+  background: url(../images/arrow.svg) 36px 11px no-repeat;
+}
+
+.center {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 75px;
+}
+
+.center-arrow {
+  cursor: pointer;
+}
+
+.box-active {
+  background-color: #833AE0;
+  color: #ffffff;
+}

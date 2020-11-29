@@ -44,14 +44,14 @@ fetch('https://api.ratesapi.io/api/latest')
     let objRates = data.rates;
     for (let key in objRates) {
       let option = document.createElement('option');
-      option.classList.add('box-select__select--option');
+      option.classList.add('option-box-1');
       option.setAttribute('value', key);
       option.innerHTML = key;
       select.appendChild(option);
     }
     for (let key in objRates) {
       let option = document.createElement('option');
-      option.classList.add('box-select__select--option');
+      option.classList.add('switcher-box-2');
       option.setAttribute('value', key);
       option.innerHTML = key;
       select2.appendChild(option);
@@ -83,13 +83,11 @@ fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyF
 //*Получаем текстовае значения валюты по умолчанию =================
 //* Для левого input ================
 
-
-
 let switcherBox1 = document.querySelectorAll('.switcher-box-1 ');
 switcherBox1.forEach(el => {
   el.addEventListener('click', event => {
-    let target = event.target;
-    currencyFrom = target.textContent || target.innerText;
+    let targetClick = event.target;
+    currencyFrom = targetClick.textContent || targetClick.innerText;
     fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
       .then(res => res.json())
       .then(data => {
@@ -108,10 +106,35 @@ switcherBox1.forEach(el => {
           let resultInput1 = this.value;
           input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
         });
-
       });
   });
 });
+//* Для левого input поля option select ================
+
+select.addEventListener('change', event => {
+  let targetChange = event.target.value;
+  currencyFrom = targetChange;
+  fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
+    .then(res => res.json())
+    .then(data => {
+      const {
+        base
+      } = data;
+      let currencyName = data.rates;
+      let currencyValue;
+      for (let key in currencyName) {
+        currencyValue = currencyName[key];
+      }
+      rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
+      input2.value = `${(input1.value / currencyValue).toFixed(4)}`;
+      rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
+      input1.addEventListener('input', function () {
+        let resultInput1 = this.value;
+        input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
+      });
+    });
+});
+
 
 //* Для правого input ================
 
@@ -123,12 +146,67 @@ switcherBox2.forEach(el => {
     fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
       .then(res => res.json())
       .then(data => {
-        console.log('data: ', data);
-
+        const {
+          base
+        } = data;
+        let currencyName = data.rates;
+        let currencyValue;
+        for (let key in currencyName) {
+          currencyValue = currencyName[key];
+        }
+        rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
+        input2.value = `${(input1.value / currencyValue).toFixed(4)}`;
+        rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
+        input1.addEventListener('input', function () {
+          let resultInput1 = this.value;
+          input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
+        });
       });
   });
 });
 
-//! Надо обернуть в функцию пока документ не загрузится, что бы все отловить
-let options1 = document.querySelectorAll('.box-select__select--option');
-console.log('options1: ', options1);
+//* Для правого input поля option select ================
+
+select2.addEventListener('change', event => {
+  let targetChange = event.target.value;
+  currencyTo = targetChange;
+  fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyFrom}`)
+    .then(res => res.json())
+    .then(data => {
+      const {
+        base
+      } = data;
+      let currencyName = data.rates;
+      let currencyValue;
+      for (let key in currencyName) {
+        currencyValue = currencyName[key];
+      }
+      rate1.innerHTML = `1 ${currencyFrom} = ${(1 / currencyValue).toFixed(4)} ${currencyTo}`;
+      input2.value = `${(input1.value / currencyValue).toFixed(4)}`;
+      rate2.innerHTML = `1 ${currencyTo} = ${currencyValue.toFixed(4)} ${currencyFrom}`;
+      input1.addEventListener('input', function () {
+        let resultInput1 = this.value;
+        input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
+      });
+    });
+});
+
+//* Реверс input ===============================================
+
+let arrowCenter = document.querySelector('.center-arrow');
+let itemCenter = document.querySelector('.center');
+let itemLeft = document.querySelector('.item-left');
+let itemRight = document.querySelector('.item-right');
+
+arrowCenter.addEventListener('click', event => {
+  let style = getComputedStyle(itemRight);
+  if (style.order === '1') {
+    itemLeft.style = 'order: 1';
+    itemCenter.style = 'order: 2';
+    itemRight.style = 'order: 3';
+  } else {
+    itemLeft.style = 'order: 3';
+    itemCenter.style = 'order: 2';
+    itemRight.style = 'order: 1';
+  }
+});
