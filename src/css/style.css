@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: #ffffff;
+  position: relative;
 }
 
 .container {
@@ -189,7 +190,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #C6C6C6;
-  padding: 0px 12px;
+  padding: 0px 18px 0px 5px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -215,4 +216,45 @@ body {
 .box-active {
   background-color: #833AE0;
   color: #ffffff;
+}
+
+option.option-box-1, option.switcher-box-2 {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.44);
+  position: fixed;
+  top: 0;
+  z-index: 111;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mask__loader {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 3px;
+  padding: 20px 30px;
+}
+
+.hide {
+  opacity: 0;
 }

@@ -56,6 +56,9 @@ fetch('https://api.ratesapi.io/api/latest')
       option.innerHTML = key;
       select2.appendChild(option);
     }
+  }).catch((err) => {
+    alert('Произошла ошибка, перезагрузите страницу');
+
   });
 
 //*Получаем значения валюты по умолчанию =================
@@ -78,6 +81,9 @@ fetch(`https://api.ratesapi.io/api/latest?base=${currencyTo}&symbols=${currencyF
       let resultInput1 = this.value;
       input2.value = `${(resultInput1 / data.rates.RUB).toFixed(4)}`;
     });
+  }).catch((err) => {
+    alert('Произошла ошибка, перезагрузите страницу');
+
   });
 
 //*Получаем текстовае значения валюты по умолчанию =================
@@ -106,6 +112,9 @@ switcherBox1.forEach(el => {
           let resultInput1 = this.value;
           input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
         });
+      }).catch((err) => {
+        alert('Произошла ошибка, перезагрузите страницу');
+
       });
   });
 });
@@ -132,6 +141,9 @@ select.addEventListener('change', event => {
         let resultInput1 = this.value;
         input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
       });
+    }).catch((err) => {
+      alert('Произошла ошибка, перезагрузите страницу');
+
     });
 });
 
@@ -161,6 +173,9 @@ switcherBox2.forEach(el => {
           let resultInput1 = this.value;
           input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
         });
+      }).catch((err) => {
+        alert('Произошла ошибка, перезагрузите страницу');
+
       });
   });
 });
@@ -188,6 +203,9 @@ select2.addEventListener('change', event => {
         let resultInput1 = this.value;
         input2.value = `${(resultInput1 / currencyValue).toFixed(4)}`;
       });
+    }).catch((err) => {
+      alert('Произошла ошибка, перезагрузите страницу');
+
     });
 });
 
@@ -209,4 +227,15 @@ arrowCenter.addEventListener('click', event => {
     itemCenter.style = 'order: 2';
     itemRight.style = 'order: 1';
   }
+});
+
+//* Preloader =============
+
+let mask = document.querySelector('.mask');
+
+window.addEventListener('load', () => {
+  mask.classList.add('hide');
+  setTimeout(() => {
+    mask.remove();
+  }, 500);
 });

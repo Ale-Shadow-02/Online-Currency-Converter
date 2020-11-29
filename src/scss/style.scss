@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background: #ffffff;
+  position: relative;
 }
 
 .container {
@@ -148,12 +149,6 @@ body {
 		}
 }
 .box-select {
-		&__text {
-		}
-		&__arrow {
-		}
-		&__arrow--img {
-		}
 		&__select {
       font-family: Roboto;
       font-weight: 400;
@@ -163,13 +158,12 @@ body {
       justify-content: center;
       align-items: center;
       color: #C6C6C6;
-      padding: 0px 12px;
+      padding: 0px 18px 0px 5px;
       appearance: none;
       border-right: none;
       background: url(../images/arrow.svg) 36px 11px no-repeat;
 		}
-		&__select--option {
-		}
+	
 }
 .center {
   width: 20%;
@@ -184,6 +178,38 @@ body {
 .box-active {
   background-color: #833AE0;
   color: #ffffff;
+}
+
+option.option-box-1, option.switcher-box-2  {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(0,0,0,0.44);
+  position: fixed;
+  top: 0;
+  z-index: 111;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__loader {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    background: #FFFFFF;
+    border-radius: 3px;
+    padding: 20px 30px;
+  }
+}
+
+.hide {
+  opacity: 0;
 }
 
 
