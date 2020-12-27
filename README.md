@@ -15,5 +15,7 @@
 
 ## Реализация
 
-HTML, CSS, SCCS Java Script, REST API
+HTML, CSS, SCSS Java Script, REST API
+
+Открыть приложение [Конвертер валют](https://ale-shadow-02.github.io/Online-Currency-Converter/src/)
 
