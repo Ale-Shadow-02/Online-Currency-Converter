@@ -15,5 +15,5 @@
 
 ## Реализация
 
-HTML, CSS, Java Script, REST API
+HTML, CSS, SCCS Java Script, REST API
 
